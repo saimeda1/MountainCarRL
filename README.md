@@ -20,9 +20,9 @@ You can install these dependencies using pip:
 pip install numpy gymnasium matplotlib
 ```
 
-###Code Explanation
+### Code Explanation
 
-##Importing Libraries
+## Importing Libraries
 ```python
 
 import numpy as np
@@ -31,12 +31,12 @@ import matplotlib.pyplot as plt
 ```
 
 
-##Environment Setup
+## Environment Setup
 ```python
 env = gym.make('MountainCar-v0', render_mode='rgb_array')
 Q-Learning Parameters
 ```
-##Q-Learning Parameters
+## Q-Learning Parameters
 ```python
 alpha = 0.1  # Learning rate
 gamma = 0.99  # Discount factor
@@ -46,9 +46,9 @@ epsilon_decay = 0.995  # Decay rate for exploration
 num_episodes = 2000
 Discretizing the Observation Space
 ```
-###Helper Functions
+### Helper Functions
 
-##Discretize State
+## Discretize State
 ```python
 state_bins = [20, 20]  # Number of bins per state dimension
 state_bounds = list(zip(env.observation_space.low, env.observation_space.high))
@@ -56,14 +56,14 @@ state_bins = [np.linspace(b[0], b[1], num) for b, num in zip(state_bounds, state
 Initializing the Q-Table
 ```
 
-##Initializing the Q-Table
+## Initializing the Q-Table
 ```python
 q_table = np.zeros((20, 20, env.action_space.n))
 Helper Functions
 Discretize State
 ```
 
-##Discretize State
+## Discretize State
 ```python
 def discretize_state(state):
     state_idx = []
@@ -73,7 +73,7 @@ def discretize_state(state):
 Choose Action
 ```
 
-##Choose Action
+## Choose Action
 ```python
 def choose_action(state):
     if np.random.random() < epsilon:
@@ -83,7 +83,7 @@ def choose_action(state):
 Update Q-Table
 ```
 
-##Update Q-Table
+## Update Q-Table
 ```python
 def update_q_table(state, action, reward, next_state, done):
     best_next_action = np.argmax(q_table[next_state])
@@ -93,7 +93,7 @@ def update_q_table(state, action, reward, next_state, done):
 Training the Agent
 ```
 
-##Training the Agent
+## Training the Agent
 ```python
 reward_list = []
 for episode in range(num_episodes):
@@ -115,7 +115,7 @@ for episode in range(num_episodes):
         print(f"Episode {episode + 1}, Reward: {total_reward}, Epsilon: {epsilon:.3f}")
 ```
 
-##Plotting Training Rewards
+## Plotting Training Rewards
 ```pyhton
 plt.plot(reward_list)
 plt.xlabel('Episode')
@@ -125,7 +125,7 @@ plt.show()
 Evaluating the Agent
 ```
 
-##Evaluating the Agent
+## Evaluating the Agent
 ```python
 state = discretize_state(env.reset()[0])
 done = False
