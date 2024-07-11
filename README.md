@@ -20,7 +20,7 @@ You can install these dependencies using pip:
 pip install numpy gymnasium matplotlib
 ```
 
-### Code Explanation
+# Code Explanation
 
 ## Importing Libraries
 ```python
@@ -46,7 +46,7 @@ epsilon_decay = 0.995  # Decay rate for exploration
 num_episodes = 2000
 Discretizing the Observation Space
 ```
-### Helper Functions
+# Helper Functions
 
 ## Discretize State
 ```python
@@ -138,9 +138,14 @@ while not done:
 env.close()
 ```
 
-Results
+# Results
 
-Environment Visualization
+## Environment Visualization
+
+<img width="592" alt="Screenshot 2024-07-10 at 10 18 01 PM" src="https://github.com/saimeda1/MountainCarRL/assets/40012349/0e0f5f9f-9142-40c7-9bc8-9d1772cf9edf">
 
 
-Training Rewards Plot
+## Training Rewards Plot
+
+<img width="640" alt="Screenshot 2024-07-10 at 10 38 24 PM" src="https://github.com/saimeda1/MountainCarRL/assets/40012349/e86ac1d6-758a-41d1-a735-7d62c9b231a6">
+
